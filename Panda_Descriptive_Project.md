@@ -171,17 +171,12 @@ plt.xlabel("Country")
 plt.ylabel("Number of Millionaires")
 plt.xticks(rotation=90)
 plt.show()
-plt.savefig('Where Are Billionaires From (2021)')
 ```
 
 
     
 ![png](Panda_Descriptive_Project_files/Panda_Descriptive_Project_12_0.png)
     
-
-
-
-    <Figure size 640x480 with 0 Axes>
 
 
 **5. Summary**  

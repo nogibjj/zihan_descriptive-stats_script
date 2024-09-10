@@ -13,14 +13,13 @@ print(df.shape)
 country_count = df.Country.value_counts()
 print(country_count)
 
-print(country_count.mean())
-
-print(country_count.median())
-
-print(country_count.std())
+# get the descriptive statistics
+print(f'Mean is {country_count.mean()}')
+print(f'Median is {country_count.median()}')
+print(f'Standard deviation is {country_count.std()}')
 
 # Create a bar plot of where billionaires are from
-plt.figure(figsize=(15, 10))
+plt.figure(figsize=(15, 12))
 plt.bar(country_count.index, country_count)
 plt.title("Where Are Billionaires From (2021)")
 plt.xlabel("Country")
