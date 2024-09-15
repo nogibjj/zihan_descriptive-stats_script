@@ -1,25 +1,18 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/python
-{
-	"name": "Python 3",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/python:1-3.11-bullseye",
-	"features": {
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
-	}
+# See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.245.2/containers/codespaces-linux/.devcontainer/base.Dockerfile
 
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+FROM mcr.microsoft.com/vscode/devcontainers/universal:2-focal
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "pip3 install --user -r requirements.txt",
-
-	// Configure tool-specific properties.
-	// "customizations": {},
-
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
-}
+# [Optional] Uncomment this section to install additional OS packages.
+# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+#     && apt-get -y install --no-install-recommends <your-package-list-here>
+RUN apt-get update && apt-get -y install --no-install-recommends \
+   python3.8-venv \
+   gcc 
+   
+ARG USER="codespace"
+ARG VENV_PATH="/home/${USER}/venv"
+COPY requirements.txt /tmp/
+COPY Makefile /tmp/
+RUN su $USER -c "/usr/bin/python3 -m venv /home/${USER}/venv" \
+   && su $USER -c "${VENV_PATH}/bin/pip --disable-pip-version-check --no-cache-dir install -r /tmp/requirements.txt" \
+   && rm -rf /tmp/requirements.txt 
