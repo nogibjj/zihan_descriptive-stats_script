@@ -1,6 +1,3 @@
-import pandas as pd  # imports pandas and calls the imported version 'pd'
-import matplotlib.pyplot as plt  # imports the package and calls it 'plt'
-
 from main import get_statistics, build_barplot
 
 def test_statistics():
