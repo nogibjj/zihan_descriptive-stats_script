@@ -3,15 +3,12 @@ install:
 		pip install -r requirements.txt
 
 test:
-	pip install pytest pytest-cov
 	python -m pytest -vv --cov=main test_*.py
 
 format:	
-	pip install black
-	black .
+	black *.py 
 
 lint:
-	pip install pylint
 	pylint --disable=R,C --ignore-patterns=test_.*?py *.py
 
 deploy:
