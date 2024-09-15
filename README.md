@@ -1,5 +1,6 @@
 # Analysis of the World's Millinonaires in 2021
 [![CI Python & Polars](https://github.com/nogibjj/zihan_descriptive_stats_project/actions/workflows/main.yml/badge.svg)](https://github.com/nogibjj/zihan_descriptive_stats_project/actions/workflows/main.yml)
+
 *Data file is attached to the main.*
 
 * Python script (`.py`) together with the Jupyter Notebook (`.ipynb`) is provided
