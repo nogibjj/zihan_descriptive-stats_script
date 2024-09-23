@@ -56,7 +56,7 @@ To set up this project locally, follow these steps:
 ## Usage Instructions
 To use this project:
 
-1. **Run the `main.py` file** to test the `add(a, b)` function:
+1. **Run the `main.py` file** to see the data and the analysis:
     ```bash
     python main.py
     ```
